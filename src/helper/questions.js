@@ -1,4 +1,4 @@
-const spaceScienceQuestions = [
+const Questions = [
     {
       id: 1,
       soru: "1. Ay, dünya etrafında kaç günde bir tam tur atar?",
@@ -141,4 +141,4 @@ const spaceScienceQuestions = [
     },
   ];
   
-  export default spaceScienceQuestions
+  export default Questions

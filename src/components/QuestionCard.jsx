@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Question = ({ question, onNext }) => {
+const QuestionCard = ({ question, onNext }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   const handleAnswerSelect = (event) => {
@@ -41,7 +41,7 @@ const Question = ({ question, onNext }) => {
       <div className="card-body">
         <a href="#" className="card-link">
           <button
-            class="btn btn-primary btn-block"
+            className="btn btn-primary btn-block"
             type="button"
             onClick={handleNext}
           >
@@ -53,4 +53,4 @@ const Question = ({ question, onNext }) => {
   );
 };
 
-export default Question;
+export default QuestionCard;

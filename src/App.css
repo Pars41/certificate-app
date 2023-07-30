@@ -1,6 +1,5 @@
-/* img{
-    width: 24rem;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Caprasimo&family=Comfortaa:wght@300;400;500;600;700&family=Julee&family=Raleway&family=Roboto:wght@300;400;500;700&family=Victor+Mono&display=swap');
+
 .card img {
     float: left;
     width:  30rem;
