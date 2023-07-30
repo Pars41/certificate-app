@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import QuestionCard from "./components/QuestionCard";
@@ -26,19 +26,35 @@ function App() {
     } else {
       notify("Son soruya ulaşıldı.");
 
-      console.log("Son soruya ulaşıldı.");
       // Eğer burada başka bir işlem yapmak isterseniz, son soruda olan durumu yönetebilirsiniz.
     }
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => console.log('Initial timeout!'), 150000);
+  }, []);
   return (
-    <div className="container d-flex justify-content-center">
-      <QuestionCard
-        question={Questions[currentQuestionIndex]}
-        onNext={handleNext}
-      />
-      {/* <button onClick={notify}>Notify!</button> */}
-      <ToastContainer />
+    <div className="screen d-flex align-items-end">
+      <div className="soruAdet mx-3 p-2">
+        <p>SORU</p>
+        <p>
+          {currentQuestionIndex + 1}/{Questions.length}
+        </p>
+      </div>
+      <div className="container  d-flex justify-content-center ">
+        <QuestionCard
+          question={Questions[currentQuestionIndex]}
+          onNext={handleNext}
+        />
+        {/* <button onClick={notify}>Notify!</button> */}
+        <ToastContainer />
+      </div>
+      <div className="duration mx-3 p-2">
+        <p>KALAN SÜRE</p>
+        <p>
+          {currentQuestionIndex + 1} sn
+        </p>
+      </div>
     </div>
   );
 }

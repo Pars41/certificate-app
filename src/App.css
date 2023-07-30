@@ -6,3 +6,9 @@
     height: 18rem;
     object-fit: cover;
 }
+.screen{
+    margin: 0;
+    padding: 0;
+    width: 98vw;
+    height:fit-content;
+}

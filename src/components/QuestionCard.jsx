@@ -13,7 +13,7 @@ const QuestionCard = ({ question, onNext }) => {
   };
 
   return (
-    <div className="card p-5" style={{ width: "36rem" }}>
+    <div className="card p-5 " style={{ width: "36rem", height:"100vh" }}>
       <img
         className="card-img-top  rounded "
         src={question.img}
