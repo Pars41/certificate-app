@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 import QuestionCard from "./components/QuestionCard";
@@ -6,9 +6,12 @@ import Questions from "./helper/questions";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Intro from "./components/Intro";
 
 function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [timer, setTimer] = useState(15)
+  const [start, setStart] = useState(false)
 
   const handleNext = (selectedAnswer) => {
     // Burada kullanıcının seçtiği cevabı işleyebilirsiniz (örn. puanlama)
@@ -30,11 +33,16 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => console.log('Initial timeout!'), 150000);
-  }, []);
+  // duration 
+  // useEffect(() => {
+  //   const interval = 
+  //   return () => clearInterval(interval);
+  // }, [])
+  
+
+  
   return (
-    <div className="screen d-flex align-items-end">
+    <div className="screen d-flex align-items-end" >
       <div className="soruAdet mx-3 p-2">
         <p>SORU</p>
         <p>
@@ -42,17 +50,18 @@ function App() {
         </p>
       </div>
       <div className="container  d-flex justify-content-center ">
-        <QuestionCard
+        {start ? (<QuestionCard
           question={Questions[currentQuestionIndex]}
           onNext={handleNext}
-        />
-        {/* <button onClick={notify}>Notify!</button> */}
+        />) :(<Intro start={start} setStart={setStart} timer={timer} setTimer={setTimer}/>)  }
+        
+        
         <ToastContainer />
       </div>
       <div className="duration mx-3 p-2">
         <p>KALAN SÜRE</p>
         <p>
-          {currentQuestionIndex + 1} sn
+          {timer} sn
         </p>
       </div>
     </div>

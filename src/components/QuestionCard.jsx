@@ -26,7 +26,7 @@ const QuestionCard = ({ question, onNext }) => {
         {Object.entries(question.cevaplar).map(([key, value]) => (
           <li className="list-group-item d-flex  align-items-center" key={key}>
             <input
-              className="mr-2 mb-2"
+              className="mr-2 mb-1"
               type="radio"
               id={key}
               name="answer"
